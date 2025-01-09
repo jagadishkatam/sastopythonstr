@@ -23,16 +23,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="python_string_files/libs/clipboard/clipboard.min.js"></script>
-<script src="python_string_files/libs/quarto-html/quarto.js"></script>
-<script src="python_string_files/libs/quarto-html/popper.min.js"></script>
-<script src="python_string_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="python_string_files/libs/quarto-html/anchor.min.js"></script>
-<link href="python_string_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="python_string_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="python_string_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="python_string_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="python_string_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="sastopythonstr_files/libs/clipboard/clipboard.min.js"></script>
+<script src="sastopythonstr_files/libs/quarto-html/quarto.js"></script>
+<script src="sastopythonstr_files/libs/quarto-html/popper.min.js"></script>
+<script src="sastopythonstr_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="sastopythonstr_files/libs/quarto-html/anchor.min.js"></script>
+<link href="sastopythonstr_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="sastopythonstr_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="sastopythonstr_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="sastopythonstr_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="sastopythonstr_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -42,21 +42,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#keep-the-first-word" id="toc-keep-the-first-word" class="nav-link active" data-scroll-target="#keep-the-first-word">Keep the First Word</a></li>
-  <li><a href="#extract-numbers" id="toc-extract-numbers" class="nav-link" data-scroll-target="#extract-numbers">Extract Numbers</a></li>
-  <li><a href="#keep-positions" id="toc-keep-positions" class="nav-link" data-scroll-target="#keep-positions">Keep Positions</a></li>
-  <li><a href="#keep-string-containing-fixed-values" id="toc-keep-string-containing-fixed-values" class="nav-link" data-scroll-target="#keep-string-containing-fixed-values">Keep String Containing Fixed Values</a></li>
-  <li><a href="#replace-sub-strings-in-a-string" id="toc-replace-sub-strings-in-a-string" class="nav-link" data-scroll-target="#replace-sub-strings-in-a-string">Replace Sub-Strings in a String</a></li>
-  <li><a href="#trim-leading-and-trailing-spaces" id="toc-trim-leading-and-trailing-spaces" class="nav-link" data-scroll-target="#trim-leading-and-trailing-spaces">Trim Leading and Trailing Spaces</a></li>
-  <li><a href="#convert-to-upper-case" id="toc-convert-to-upper-case" class="nav-link" data-scroll-target="#convert-to-upper-case">Convert to Upper Case</a></li>
-  <li><a href="#convert-to-lower-case" id="toc-convert-to-lower-case" class="nav-link" data-scroll-target="#convert-to-lower-case">Convert to Lower Case</a></li>
-  <li><a href="#length-of-string" id="toc-length-of-string" class="nav-link" data-scroll-target="#length-of-string">Length of String</a></li>
-  </ul>
-</nav>
+  
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -84,8 +70,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="grid">
 <section id="sas" class="level1 g-col-6">
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SAS</h1>
-<section id="concatenate-strings" class="level3">
-<h3 class="anchored" data-anchor-id="concatenate-strings">Concatenate Strings</h3>
+<section id="concatenate-strings" class="level4">
+<h4 class="anchored" data-anchor-id="concatenate-strings">Concatenate Strings</h4>
 <div class="cell">
 <pre class="text cell-code"><code>data ds_new; 
 set ds_old; 
@@ -96,8 +82,8 @@ run;</code></pre>
 </section>
 <section id="python" class="level1 g-col-6">
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Python</h1>
-<section id="section" class="level4">
-<h4 class="anchored" data-anchor-id="section"></h4>
+<section id="section" class="level5">
+<h5 class="anchored" data-anchor-id="section"></h5>
 <div class="cell">
 <pre class="text cell-code"><code>ds_old['USUBJID'] = ds_old[['STUDYID', 'SITEID', 'SUBJID']].agg('-'.join, axis=1)
 ds_new = ds_old </code></pre>
@@ -105,8 +91,8 @@ ds_new = ds_old </code></pre>
 </section>
 </section>
 </div>
-<section id="keep-the-first-word" class="level3">
-<h3 class="anchored" data-anchor-id="keep-the-first-word">Keep the First Word</h3>
+<section id="keep-the-first-word" class="level4">
+<h4 class="anchored" data-anchor-id="keep-the-first-word">Keep the First Word</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -124,8 +110,8 @@ ds_new = ds_old </code></pre>
 </div>
 </div>
 </section>
-<section id="extract-numbers" class="level3">
-<h3 class="anchored" data-anchor-id="extract-numbers">Extract Numbers</h3>
+<section id="extract-numbers" class="level4">
+<h4 class="anchored" data-anchor-id="extract-numbers">Extract Numbers</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -143,8 +129,8 @@ ds_new = ds_old </code></pre>
 </div>
 </div>
 </section>
-<section id="keep-positions" class="level3">
-<h3 class="anchored" data-anchor-id="keep-positions">Keep Positions</h3>
+<section id="keep-positions" class="level4">
+<h4 class="anchored" data-anchor-id="keep-positions">Keep Positions</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -162,8 +148,8 @@ ds_new = ds_old </code></pre>
 </div>
 </div>
 </section>
-<section id="keep-string-containing-fixed-values" class="level3">
-<h3 class="anchored" data-anchor-id="keep-string-containing-fixed-values">Keep String Containing Fixed Values</h3>
+<section id="keep-string-containing-fixed-values" class="level4">
+<h4 class="anchored" data-anchor-id="keep-string-containing-fixed-values">Keep String Containing Fixed Values</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -180,8 +166,8 @@ run;</code></pre>
 </div>
 </div>
 </section>
-<section id="replace-sub-strings-in-a-string" class="level3">
-<h3 class="anchored" data-anchor-id="replace-sub-strings-in-a-string">Replace Sub-Strings in a String</h3>
+<section id="replace-sub-strings-in-a-string" class="level4">
+<h4 class="anchored" data-anchor-id="replace-sub-strings-in-a-string">Replace Sub-Strings in a String</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -199,8 +185,8 @@ ds_new = ds_old</code></pre>
 </div>
 </div>
 </section>
-<section id="trim-leading-and-trailing-spaces" class="level3">
-<h3 class="anchored" data-anchor-id="trim-leading-and-trailing-spaces">Trim Leading and Trailing Spaces</h3>
+<section id="trim-leading-and-trailing-spaces" class="level4">
+<h4 class="anchored" data-anchor-id="trim-leading-and-trailing-spaces">Trim Leading and Trailing Spaces</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -219,8 +205,8 @@ ds_new = ds_old</code></pre>
 </div>
 </div>
 </section>
-<section id="convert-to-upper-case" class="level3">
-<h3 class="anchored" data-anchor-id="convert-to-upper-case">Convert to Upper Case</h3>
+<section id="convert-to-upper-case" class="level4">
+<h4 class="anchored" data-anchor-id="convert-to-upper-case">Convert to Upper Case</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -238,8 +224,8 @@ ds_new = ds_old</code></pre>
 </div>
 </div>
 </section>
-<section id="convert-to-lower-case" class="level3">
-<h3 class="anchored" data-anchor-id="convert-to-lower-case">Convert to Lower Case</h3>
+<section id="convert-to-lower-case" class="level4">
+<h4 class="anchored" data-anchor-id="convert-to-lower-case">Convert to Lower Case</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">
@@ -257,8 +243,8 @@ ds_new = ds_old</code></pre>
 </div>
 </div>
 </section>
-<section id="length-of-string" class="level3">
-<h3 class="anchored" data-anchor-id="length-of-string">Length of String</h3>
+<section id="length-of-string" class="level4">
+<h4 class="anchored" data-anchor-id="length-of-string">Length of String</h4>
 <div class="grid">
 <div class="g-col-6">
 <div class="cell">

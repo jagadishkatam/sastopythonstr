@@ -23,7 +23,7 @@ library(tidyverse)
 ::: g-col-6
 #              SAS
 
-### Concatenate Strings
+#### Concatenate Strings
 
 ```{text}
 data ds_new; 
@@ -36,7 +36,7 @@ run;
 ::: g-col-6
 #              Python
 
-#### 
+##### 
 
 ```{text}
 ds_old['USUBJID'] = ds_old[['STUDYID', 'SITEID', 'SUBJID']].agg('-'.join, axis=1)
@@ -45,7 +45,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Keep the First Word
+#### Keep the First Word
 
 ::::: grid
 ::: g-col-6
@@ -65,7 +65,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Extract Numbers
+#### Extract Numbers
 
 ::::: grid
 ::: g-col-6
@@ -85,7 +85,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Keep Positions
+#### Keep Positions
 
 ::::: grid
 ::: g-col-6
@@ -105,7 +105,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Keep String Containing Fixed Values
+#### Keep String Containing Fixed Values
 
 ::::: grid
 ::: g-col-6
@@ -124,7 +124,7 @@ ds_new = ds_old[ds_old['ARMCD']=='ARM-A']
 :::
 :::::
 
-### Replace Sub-Strings in a String
+#### Replace Sub-Strings in a String
 
 ::::: grid
 ::: g-col-6
@@ -144,7 +144,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Trim Leading and Trailing Spaces
+#### Trim Leading and Trailing Spaces
 
 ::::: grid
 ::: g-col-6
@@ -165,7 +165,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Convert to Upper Case
+#### Convert to Upper Case
 
 ::::: grid
 ::: g-col-6
@@ -185,7 +185,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Convert to Lower Case
+#### Convert to Lower Case
 
 ::::: grid
 ::: g-col-6
@@ -205,7 +205,7 @@ ds_new = ds_old
 :::
 :::::
 
-### Length of String
+#### Length of String
 
 ::::: grid
 ::: g-col-6
