@@ -1,0 +1,226 @@
+---
+title: "SAS <-> Python :: String Manipulation Functions"
+format:
+  html:
+    css: styles.css
+    toc: true
+    toc-location: left
+    grid:
+      sidebar-width: 200px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 0.5rem
+editor: visual
+execute:
+  enabled: true
+---
+
+```{r, eval=TRUE, echo=FALSE, include=FALSE}
+library(tidyverse)
+```
+
+::::: grid
+::: g-col-6
+#              SAS
+
+### Concatenate Strings
+
+```{text}
+data ds_new; 
+set ds_old; 
+USUBJID = catx("-", STUDYID, SITEID, SUBJID); 
+run;
+```
+:::
+
+::: g-col-6
+#              Python
+
+#### 
+
+```{text}
+ds_old['USUBJID'] = ds_old[['STUDYID', 'SITEID', 'SUBJID']].agg('-'.join, axis=1)
+ds_new = ds_old 
+```
+:::
+:::::
+
+### Keep the First Word
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+reason = scan(other, 1); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['reason'] = ds_old['other'].str.split(r'[\s]').str[0]
+ds_new = ds_old 
+```
+:::
+:::::
+
+### Extract Numbers
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+num = compress(other, , "kd"); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['SITEID'] = ds_old['SITEID'].str.extract(r'(\d+)')
+ds_new = ds_old 
+```
+:::
+:::::
+
+### Keep Positions
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+str = substr(USUBJID, 1, 4); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['USUBJID'] = ds_old['USUBJID'].str[0:4]
+ds_new = ds_old 
+```
+:::
+:::::
+
+### Keep String Containing Fixed Values
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+if find(ARMCD, "ARM-A"); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_new = ds_old[ds_old['ARMCD']=='ARM-A']
+```
+:::
+:::::
+
+### Replace Sub-Strings in a String
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+a = tranwrd(b, 'SV', 'VS'); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['a'] = ds_old['b'].str.replace('SV','VS')
+ds_new = ds_old
+```
+:::
+:::::
+
+### Trim Leading and Trailing Spaces
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+CMTRT = strip(TRT); 
+run;
+
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['CMTRT'] = ds_old['CMTRT'].str.strip()
+ds_new = ds_old
+```
+:::
+:::::
+
+### Convert to Upper Case
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+AETERM = upcase(AEVERB); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['AETERM'] = ds_old['AEVERB'].str.upper()
+ds_new = ds_old
+```
+:::
+:::::
+
+### Convert to Lower Case
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+VSREASND = lowcase(RSND);
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['VSREASND'] = ds_old['RSND'].str.lower()
+ds_new = ds_old
+```
+:::
+:::::
+
+### Length of String
+
+::::: grid
+::: g-col-6
+```{text}
+data ds_new; 
+set ds_old; 
+TERM_LEN = length(DSTERM); 
+run;
+```
+:::
+
+::: g-col-6
+```{text}
+ds_old['TERM_LEN'] = ds_old['DSTERM'].str.len()
+ds_new = ds_old
+```
+:::
+:::::
