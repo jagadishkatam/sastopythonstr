@@ -12,12 +12,15 @@ format:
       gutter-width: 0.5rem
 editor: visual
 execute:
-  enabled: true
+  enabled: false
 ---
 
 ```{r, eval=TRUE, echo=FALSE, include=FALSE}
 library(tidyverse)
 ```
+
+
+
 
 ::::: grid
 ::: g-col-6
@@ -25,7 +28,7 @@ library(tidyverse)
 
 #### Concatenate Strings
 
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 USUBJID = catx("-", STUDYID, SITEID, SUBJID); 
@@ -38,7 +41,7 @@ run;
 
 ##### 
 
-```{text}
+```{python}
 ds_old['USUBJID'] = ds_old[['STUDYID', 'SITEID', 'SUBJID']].agg('-'.join, axis=1)
 ds_new = ds_old 
 ```
@@ -49,7 +52,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 reason = scan(other, 1); 
@@ -58,7 +61,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['reason'] = ds_old['other'].str.split(r'[\s]').str[0]
 ds_new = ds_old 
 ```
@@ -69,7 +72,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 num = compress(other, , "kd"); 
@@ -78,7 +81,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['SITEID'] = ds_old['SITEID'].str.extract(r'(\d+)')
 ds_new = ds_old 
 ```
@@ -89,7 +92,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 str = substr(USUBJID, 1, 4); 
@@ -98,7 +101,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['USUBJID'] = ds_old['USUBJID'].str[0:4]
 ds_new = ds_old 
 ```
@@ -109,7 +112,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 if find(ARMCD, "ARM-A"); 
@@ -118,7 +121,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_new = ds_old[ds_old['ARMCD']=='ARM-A']
 ```
 :::
@@ -128,7 +131,7 @@ ds_new = ds_old[ds_old['ARMCD']=='ARM-A']
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 a = tranwrd(b, 'SV', 'VS'); 
@@ -137,7 +140,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['a'] = ds_old['b'].str.replace('SV','VS')
 ds_new = ds_old
 ```
@@ -148,7 +151,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 CMTRT = strip(TRT); 
@@ -158,7 +161,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['CMTRT'] = ds_old['CMTRT'].str.strip()
 ds_new = ds_old
 ```
@@ -169,7 +172,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 AETERM = upcase(AEVERB); 
@@ -178,7 +181,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['AETERM'] = ds_old['AEVERB'].str.upper()
 ds_new = ds_old
 ```
@@ -189,7 +192,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 VSREASND = lowcase(RSND);
@@ -198,7 +201,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['VSREASND'] = ds_old['RSND'].str.lower()
 ds_new = ds_old
 ```
@@ -209,7 +212,7 @@ ds_new = ds_old
 
 ::::: grid
 ::: g-col-6
-```{text}
+```{sas}
 data ds_new; 
 set ds_old; 
 TERM_LEN = length(DSTERM); 
@@ -218,7 +221,7 @@ run;
 :::
 
 ::: g-col-6
-```{text}
+```{python}
 ds_old['TERM_LEN'] = ds_old['DSTERM'].str.len()
 ds_new = ds_old
 ```
