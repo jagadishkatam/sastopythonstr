@@ -102,7 +102,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="grid">
-<section id="sas" class="level1 g-col-6">
+<section id="sas" class="level1 g-col-5">
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SAS</h1>
 <section id="concatenate-strings" class="level4">
 <h4 class="anchored" data-anchor-id="concatenate-strings">Concatenate Strings</h4>
@@ -114,7 +114,7 @@ run;</code></pre>
 </div>
 </section>
 </section>
-<section id="python" class="level1 g-col-6">
+<section id="python" class="level1 g-col-7">
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Python</h1>
 <section id="section" class="level5">
 <h5 class="anchored" data-anchor-id="section"></h5>
@@ -128,7 +128,7 @@ run;</code></pre>
 <section id="keep-the-first-word" class="level4">
 <h4 class="anchored" data-anchor-id="keep-the-first-word">Keep the First Word</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -136,7 +136,7 @@ reason = scan(other, 1);
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'reason'</span>] <span class="op">=</span> ds_old[<span class="st">'other'</span>].<span class="bu">str</span>.split(<span class="vs">r'[\s]'</span>).<span class="bu">str</span>[<span class="dv">0</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -147,7 +147,7 @@ run;</code></pre>
 <section id="extract-numbers" class="level4">
 <h4 class="anchored" data-anchor-id="extract-numbers">Extract Numbers</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -155,7 +155,7 @@ num = compress(other, , "kd");
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'SITEID'</span>] <span class="op">=</span> ds_old[<span class="st">'SITEID'</span>].<span class="bu">str</span>.extract(<span class="vs">r'(\d+)'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -166,7 +166,7 @@ run;</code></pre>
 <section id="keep-positions" class="level4">
 <h4 class="anchored" data-anchor-id="keep-positions">Keep Positions</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -174,7 +174,7 @@ str = substr(USUBJID, 1, 4);
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'USUBJID'</span>] <span class="op">=</span> ds_old[<span class="st">'USUBJID'</span>].<span class="bu">str</span>[<span class="dv">0</span>:<span class="dv">4</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -185,7 +185,7 @@ run;</code></pre>
 <section id="keep-string-containing-fixed-values" class="level4">
 <h4 class="anchored" data-anchor-id="keep-string-containing-fixed-values">Keep String Containing Fixed Values</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -193,7 +193,7 @@ if find(ARMCD, "ARM-A");
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old[ds_old[<span class="st">'ARMCD'</span>]<span class="op">==</span><span class="st">'ARM-A'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -203,7 +203,7 @@ run;</code></pre>
 <section id="replace-sub-strings-in-a-string" class="level4">
 <h4 class="anchored" data-anchor-id="replace-sub-strings-in-a-string">Replace Sub-Strings in a String</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -211,7 +211,7 @@ a = tranwrd(b, 'SV', 'VS');
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'a'</span>] <span class="op">=</span> ds_old[<span class="st">'b'</span>].<span class="bu">str</span>.replace(<span class="st">'SV'</span>,<span class="st">'VS'</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -222,7 +222,7 @@ run;</code></pre>
 <section id="trim-leading-and-trailing-spaces" class="level4">
 <h4 class="anchored" data-anchor-id="trim-leading-and-trailing-spaces">Trim Leading and Trailing Spaces</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -231,7 +231,7 @@ run;
 </code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'CMTRT'</span>] <span class="op">=</span> ds_old[<span class="st">'CMTRT'</span>].<span class="bu">str</span>.strip()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -242,7 +242,7 @@ run;
 <section id="convert-to-upper-case" class="level4">
 <h4 class="anchored" data-anchor-id="convert-to-upper-case">Convert to Upper Case</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -250,7 +250,7 @@ AETERM = upcase(AEVERB);
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'AETERM'</span>] <span class="op">=</span> ds_old[<span class="st">'AEVERB'</span>].<span class="bu">str</span>.upper()</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -261,7 +261,7 @@ run;</code></pre>
 <section id="convert-to-lower-case" class="level4">
 <h4 class="anchored" data-anchor-id="convert-to-lower-case">Convert to Lower Case</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -269,7 +269,7 @@ VSREASND = lowcase(RSND);
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'VSREASND'</span>] <span class="op">=</span> ds_old[<span class="st">'RSND'</span>].<span class="bu">str</span>.lower()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -280,7 +280,7 @@ run;</code></pre>
 <section id="length-of-string" class="level4">
 <h4 class="anchored" data-anchor-id="length-of-string">Length of String</h4>
 <div class="grid">
-<div class="g-col-6">
+<div class="g-col-5">
 <div class="cell">
 <pre class="sas cell-code"><code>data ds_new; 
 set ds_old; 
@@ -288,7 +288,7 @@ TERM_LEN = length(DSTERM);
 run;</code></pre>
 </div>
 </div>
-<div class="g-col-6">
+<div class="g-col-7">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>ds_old[<span class="st">'TERM_LEN'</span>] <span class="op">=</span> ds_old[<span class="st">'DSTERM'</span>].<span class="bu">str</span>.<span class="bu">len</span>()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ds_new <span class="op">=</span> ds_old</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
